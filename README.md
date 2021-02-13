@@ -29,31 +29,34 @@ More in depth informaation is available via the extended ReadMe documentation: h
 * Javascript
 ### Frameworks & Libraries
 * [React](https://reactjs.org/)
-* [React-Router-Dom] (https://reactrouter.com/ )
-* [React-Icons] (https://react-icons.github.io/react-icons/)
-* [React-Slick] (https://react-slick.neostack.com/)
-* [Styled-components] (https://styled-components.com)
+* [React-Router-Dom](https://reactrouter.com/ )
+* [React-Icons](https://react-icons.github.io/react-icons/)
+* [React-Slick](https://react-slick.neostack.com/)
+* [Styled-components](https://styled-components.com)
 * [Node](https://nodejs.org/en/)
 
 ### Dependencies & Components 
 * [Axios](https://github.com/axios/axios)
-* [Bcrypt] (https://pypi.org/project/bcrypt/) 
+* [Bcrypt](https://pypi.org/project/bcrypt/) 
 * [Cloudinary](https://cloudinary.com/documentation)
-* [Express ](https://www.react.express/ )
-* [Faker.js] (https://www.npmjs.com/package/faker ) 
-* [JsonWebToken] (https://www.npmjs.com/package/jsonwebtoken )
-* [Nodemon ](https://nodemon.io/ )
-* [Mongoose ](https://mongoosejs.com/) 
-* [Mongoose-unique-validator] (https://mongoosejs.com/docs/validation.html) 
+* [Express](https://www.react.express/)
+* [Faker.js](https://www.npmjs.com/package/faker) 
+* [JsonWebToken](https://www.npmjs.com/package/jsonwebtoken)
+* [Nodemon](https://nodemon.io/)
+* [Mongoose](https://mongoosejs.com/) 
+* [Mongoose-unique-validator](https://mongoosejs.com/docs/validation.html) 
 * [MongoDB](https://www.mongodb.com/)
+
 ---
 ## Contributors
 * Alberto Cerrone [📧](mailto:cerrone.alberto93@gmail.com)
 * Sandra Spighel [📧](mailto:s.spighel@gmail.com)
-* Tim Frame [📧](mailto:t.f.retouching@gmail.com)
+* Tim Frame[📧](mailto:t.f.retouching@gmail.com)
+
 ---
 ## Contributing to this project
-If you have suggestions for improving this project, please [open an issue on GitHub](https://github.com/timJFrame/sei-project-3 link of the project).
+If you have suggestions for improving this project, please [open an issue on GitHub](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR).
+
 ---
 ## License & copyright
 This project was build for educational purposes. All the information on the website, including profiles and job adds, is fictitional. 
