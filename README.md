@@ -28,6 +28,7 @@ by [Alberto Cerrone](www.linkedin.com/in/alberto-cerrone), [Sandra Spighel](http
   - [Final Thoughts & Project Wrap](#final-thoughts-and-project-wrap)
     - [Wins](#wins)
     - [Challenges](#challenges)
+    - [Key Learnings](#key-learnings)
     - [Potential future features](#potential-future-features)
   - [License](#license)
 
@@ -35,9 +36,11 @@ by [Alberto Cerrone](www.linkedin.com/in/alberto-cerrone), [Sandra Spighel](http
 Platform aiming to simplify securing developer contracts through implementing a bidding system.
 
 ## Background
-Inspired by the Fiverr website, Deverr is a job hunting platform allowing Auctioneers to advertise contracts, which interested Developers(Bidders) can 'bid' on.
+Inspired by the [Fiverr](http://fiverr.com/) website, Deverr is a job hunting platform allowing Auctioneers to advertise contracts, which interested Developers(Bidders) can 'bid' on.
 
-This is the third project in the General Assembly Software Engineering Immersive course. Working with two other colleagues, we had 10 days to develop a full stack MERN application using an Express API to serve data from a Mongo database, and a separate front-end built with React. 
+This is the third project in the General Assembly Software Engineering Immersive course. 
+
+Working with two other colleagues, we had 10 days to develop a full stack MERN application using an Express API to serve data from a Mongo database, and a separate front end built with React. 
 
 ## Technology Used
 ### Languages 
@@ -101,8 +104,9 @@ We started by each pitching an idea, discussing in detail and voting in our proj
 We selected the project with the highest score, which was a website replicating what Fiverr does, with a smaller scope of categories (focusing on digital jobs only).  
 
 ### Workflow
-We split our workload in specific areas: Alberto was responsible for styling, Tim for building the front end and I was responsible for building the back end.
-In order to assess overall daily progress, we discussed adopting a branch naming convention (COMPONENT - Component updates) and tracking our work using a Trello Board:
+We split our workload in specific areas: [Alberto](https://github.com/albertocerrone) was responsible for styling, [Tim](https://github.com/timJFrame) for building the front end and I was responsible for building the back end.
+
+In order to assess overall daily progress, we discussed adopting a branch naming convention (**COMPONENT - Component updates**) and tracking our work using a Trello Board:
 
 ![Trello Board](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/Trello%20board.png?raw=true)
 
@@ -138,9 +142,9 @@ I then installed bcrypt and mongoose-unique-validator in preparation of writing 
 
 ### Seeding
 
-In the planning phase we had worked out that we would need to create 40 ‘Auctioneer Profiles’ and 60 ‘Bidder’ profiles. 
+In the planning phase we had worked out that we would need to create 40 x ‘Auctioneer’ profiles and 60 x ‘Bidder’ profiles. 
 
-While I was working on the models, Alberto took on automating adding user seeds. Our teacher suggested we could use a React dependency called ‘Faker.js’ to create dummy users fast, so he took charge of incorporating this into the data seeding process. 
+While I was working on the models, Alberto took on automating adding user seeds. Our teacher suggested we could use a React dependency called **Faker.js** to create dummy users fast, so he took charge of incorporating this into the data seeding process. 
 
 ```
 function auctioneersSeed() {
@@ -169,18 +173,21 @@ function auctioneersSeed() {
  )
 }
 ```
-After creating auctioneerSeeds and bidderSeeds files, he wrote the 'seedDatabase' function used to add all the dummy data to the site.
+After creating auctioneerSeeds and bidderSeeds files, he wrote the 'seedDatabase' function used to add all the dummy data to the site:
 ```
    // CREATING AUCTIONEERS DB
    const auctioneers = auctioneersSeed()
    const createdAuctioneers = await User.create(auctioneers) // ! then pass that users array
    console.log(`😎 Created ${createdAuctioneers.length} Auctioneers`)
 ```
-We had also decided on having 6 types of job categories: Android Developer, Apple Developer, Back-end Developer, Front-end Developer, Game Developer and UI Developer. Tim and I wrote job seed data, having created around 10 jobs per category, to reach 60 jobs in total. 
+We had also decided on having 6 types of job categories: Android Developer, Apple Developer, Back End Developer, Front End Developer, Game Developer and UI Developer. 
+
+Tim and I wrote job seed data, having created around 10 jobs per category, to reach 60 jobs in total. 
 
 ### Controllers & Routes
 
-I then moved on to creating the controllers and the router, and testing each controller as it was created using Insomnia to make API requests.
+I then moved on to creating the controllers and the router, using Insomnia to make API requests, testing each controller as it was created.
+
 Here are the routes our app is using, along with notes about access information:
 ```
 const router = express.Router()
@@ -238,10 +245,11 @@ router.route('/login')
  .post(auth.loginUser) // Login user
 ```
 
-I set up three controlled to handle requests made to the server: 
-auth.js dealing with registering new users and logging in
-jobs.js dealing with job, comment and bid requests
-users.js dealing with user requests
+I set up the controllers to handle requests made to the server: 
+* auth.js dealing with registering new users and logging in.
+* jobs.js dealing with job, comment and bid requests.
+* users.js dealing with user requests.
+
 As an example, the code below is from the Jobs Controller:
 
 ```
@@ -356,11 +364,11 @@ Below is a screenshot of Insomnia showcasing an example of testing a route - in 
 
 ### Mounting the Front End
 
-When we were ready to mount the front end, I took the lead in doing so by creating a React app based on a custom template, scaffolded to the back end using the command <code>npx create_react_app client --template cra-template-ga-ldn-projects</code>
+When we were ready to mount the front end, I took the lead in doing this. I creating a React app based on a custom template, scaffolding to the back end using the command <code>npx create_react_app client --template cra-template-ga-ldn-projects</code>
 
-I then created the satupProxy.js file to have a matching local host address to my back end, and updated the back end index.js to route all routes via the /api:
+I then created the setupProxy.js file to have a matching local host address to my back end, and updated the back end index.js to route all routes via '/api':
 ```
-   //*Routes all routes
+   // * Route all routes
    app.use('/api', router)
 ```
 As we are using nodemon to help with automatically restarting the node application when file changes in the directory are detected, I created a new file (nodemon.json) in the root of my project and set it to ignore client directory changes:
@@ -381,6 +389,7 @@ Because we now need to run two terminals simultaneously, I added concurrently (u
  }
 ```
 Last, from the client folder, I installed the dependencies we decided are required on the front end. 
+
 I then continued testing back end routes and fixing bugs. We had an issue arising from the fact that when seeding our database, our jobs were not assigned owners, so I wrote a small function to randomly assign jobs to auctioneers:
 ```
    // MAP THROUGH JOBS DB, FOR EACH JOB ASSIGN A KEY NAMED JOB OWNER REFERENCING AUCTIONEERS DB
@@ -395,7 +404,7 @@ I then continued testing back end routes and fixing bugs. We had an issue arisin
 
 ### Schemas
 
-Once Alberto and Tim started working on the front end, it became more and more obvious that because of our Auctioneer and Bidder Schemas, our code was not DRY enough as we had to repeat a lot of code twice. 
+Once Alberto and Tim started working on the front end, it became more and more obvious that because of our Auctioneer and Bidder Schemas, our code was not DRY enough as we had to repeat a lot of code. 
 
 To resolve this issue, we decided to restructure our schemas and refactor Bidders and Auctioneers into one User schema with the added boolean field isAuctioneer:
 
@@ -406,18 +415,20 @@ After I finished implementing everything we discussed for the back end, I moved 
 
 I changed the head information to include our website name, description and logo, after which I went through the React Slick documentation to prepare implementing the carousel component containing our job categories. We initially wanted the component to sit on the home page, but as our website took shape we all agreed it made more sense to host this at the top of the JOBS page.
 
-After looking at the code again while writing the README, I think a possible update would be to refactor the JobCarousel.js to only use one card which can then be populated with individual job ids and titles.
+As a side note, after looking at the code again while writing the README, I think a possible update for this section would be to refactor the JobCarousel.js to only use one card which can then be populated with individual job ids and titles. 
 
 ### Home Page
-As Alberto was working on styling other parts of the website, I took on populating and styling the home page. I created the hero and footer, and selected a small number of images to choose from for background, to give the website a sleek, vibrant and fresh look. The images had to include sharp design elements to accentuate the GlassMorphism, and we were keen to have a dynamic background that suggested a network of collaboration.
+As Alberto was working on styling other parts of the website, I took on populating and styling the home page. 
+
+I created the hero and footer, and selected a small number of images to choose from for background, to give the website a sleek, vibrant and fresh look. The images had to include sharp design elements to accentuate the GlassMorphism, and we were keen to have a dynamic background that suggested a network of collaboration.
 
 ![styling](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/style.png?raw=true)
 
-Working with the same friend I collaborated for Project 1, we processed the hero image to include the DEVERR logo, and edited the selected high resolution image to sharpen it.
+Working with the same friend I collaborated with for [Project 1](https://github.com/HotSauceNinja/SEI-Project-1-HotSauceNinjaGame), we processed the hero image to include the DEVERR logo, and edited the selected high resolution image to sharpen it.
 
-I then imported all images and styled the home page to ensure the hero sits nicely at any screen width. 
+I then imported all images and styled the home page to ensure the hero adapts well to any screen width. 
 
-Last, I wrote the about section of the home page, offering users a brief guide on how to navigate the website. 
+Last, I wrote the about section of the home page, offering users a brief guide on how to use the website. 
 
 ### User Index
 
@@ -482,24 +493,31 @@ In UserCard.js :
 ## Final Thoughts & Project Wrap
 
 ### Wins
-* Got on very well with team, we had a good workflow and managed to reach our MVP. We were able to support each other and work together towards resolving any issues we ran into.
-* Implementing favouriting functionality - I struggled with setting this up on the back end, but very pleased with it now functioning 
-* Restructuring the schema to one user model
+* **Teamwork**: We got on very well, had a good workflow and managed to reach our MVP in time. We were able to support each other and work together towards resolving any issues we ran into.
+
+* **Implementing favouriting functionality**: I struggled with setting this up on the back end, but I am very pleased with implementing this.
+
+* **Schema refactoring**: Restructuring the schema to one user model was not an easy decision to make, but taking this step paid off because it ensured our code was DRY and helped us speed up our work by not having to repeat code.
 ### Challenges
-* **Jobs in database did not have owners**: For initial testing, we did not require each job to have an owner in the database. However, in the working website we want this relationship to be required. To achieve this we added 'required: true' in the job schema, and then linked owners in seeds.js.
+* **Jobs in the database did not have owners**: For initial testing, we did not require each job to have an owner in the database. However, in the working website we wanted this relationship to be required. To achieve this we added 'required: true' in the job schema, and then linked owners in seeds.js.
 
-* **Assigning Jobs to more than one Auctioneer**: When seeding the database, we needed to ensure that all jobs are owned by Auctioneers, but we did not want to assign all the jobs to one Auctioneer. To solve this issue, we are using Math.random to assign auctioneer owners to jobs randomly: Starting from index 0 in the jobs array we go one by one and assign random auctioneer to each job (with Math.random()). 
+* **Assigning Jobs to more than one Auctioneer**: When seeding the database, we needed to ensure that all jobs are owned by Auctioneers, but we did not want to assign all the jobs to one Auctioneer. To solve this issue, I used Math.random to randomly assign Auctioneer owners to jobs: Starting from index 0 in the jobs array we go one by one and assign a random auctioneer to each job. 
 
-* **Refactoring back end schemas from Auctioneer and Bidder to User Schema**: As discussed [above](#schemas)
+* **Refactoring back end schemas from Auctioneer and Bidder to User Schema**: As discussed [previously](#schemas), this was one of our biggest challenges.
+
+### Key Learnings:
+* Working with Express in a scaled up project was harder than I expected, but it was a great challenge because I now understand better how elements function together. 
+
+* After finishing my work on the back end and moving to the front end, I found it hard to switch my perspective and it took a few hours to get my mind working at 100%. However, having to repeatedly bounce in between the front and the back to check permissions and models has helped gradually speed up the process.
 
 ### Potential future features
-* **How to notify the auctioneer when a bid is placed**: When a bid is placed, we loop through the list of auctioneers and alert the one whose id matches the id of the auctioneer who owns the bid.
+* **How to notify the auctioneer when a bid is placed**: When a bid is placed, we loop through the list of auctioneers and alert the person whose id matches the id of the auctioneer who owns the bid.
 
-* **How to create a bid chat** - Tim has managed to add this feature before we published the website
+* **Create a bid chat** - Tim has managed to add this feature before we published the website.
 
-* **Enable Bidder to post photos once he wins bid**: The photos would serve as proof of the delivered project), we could host this on a newly crated bidder profile under a portfolio section.
+* **Enable Bidder to post photos once they win a bid**: The photos would serve as proof of the delivered project, and we could host them on a newly crated bidder profile under a portfolio section.
 
-* **Publish weekly Top 5 of best rated bidders, and of auctioneers with most jobs posted**
+* **Display '*Top 5 Best Rated Bidders*', and '*Top 5 Auctioneers with Most Jobs Posted*'**.
 
 
 ## Further information about our planning process is available via the [extended documentation](https://docs.google.com/document/d/1XGp4wVEdUBzMLSSu7ltRPjLcE1I3-e3xVfCZbchfyhY/edit?usp=sharing)
