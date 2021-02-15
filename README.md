@@ -104,21 +104,21 @@ We selected the project with the highest score, which was a website replicating 
 We split our workload in specific areas: Alberto was responsible for styling, Tim for building the front end and I was responsible for building the back end.
 In order to assess overall daily progress, we discussed adopting a branch naming convention (COMPONENT - Component updates) and tracking our work using a Trello Board:
 
-![Trello Board](#link)
+![Trello Board](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/Trello%20board.png?raw=true)
 
 ### Wireframes
 
 Home page hero
-![hero](#link)
+![hero](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/hero.jpg?raw=true)
 
 Register user
-![register_page](#link)
+![register_page](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/register_page.jpg?raw=true)
 
 Login user
-![login](#link)
+![login](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/login.jpg?raw=true)
 
 User profile
-![profile-page](#link)
+![profile-page](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/profile-page.jpg?raw=true)
 
 ### Project Set Up
 
@@ -128,7 +128,7 @@ It was at this point that I took the lead on working on the back end, while Tim 
 
 I started with creating models for the users and the jobs, based on the initial schema we discussed in our project planning:
 
-![Schema1](#link)
+![Schema1](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/Schema1.png?raw=true)
 
 I then installed bcrypt and mongoose-unique-validator in preparation of writing secure routes. 
 
@@ -239,6 +239,7 @@ auth.js dealing with registering new users and logging in
 jobs.js dealing with job, comment and bid requests
 users.js dealing with user requests
 As an example, the code below is from the Jobs Controller:
+
 ```
 //*GET ALL JOBS
 async function jobIndex (req, res, next) {
@@ -308,9 +309,11 @@ async function jobUpdate (req, res, next){
  }
 }
 ```
+
 Once it was established the API requests were working correctly, I implemented a secure route that would check if a user had the correct credentials before fulfilling the request. 
 
 I then worked on implementing a custom error handler to help with communicating different types of errors the back-end might encounter while a user was making a request.
+
 ```
 export default function errorHandler(err, _req, res, next) {
  console.log('🤖 An Error Happened', err.name, err.message)
@@ -342,9 +345,10 @@ export default function errorHandler(err, _req, res, next) {
  next(err)
 }
 ```
+
 Below is a screenshot of Insomnia showcasing an example of testing a route - in this case requesting to update a job with an incorrect token:
 
-![insomnia](#link)
+![insomnia](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/insomnia.png?raw=true)
 
 ### Mounting the Front End
 
@@ -356,6 +360,7 @@ I then created the satupProxy.js file to have a matching local host address to m
    app.use('/api', router)
 ```
 As we are using nodemon to help with automatically restarting the node application when file changes in the directory are detected, I created a new file (nodemon.json) in the root of my project and set it to ignore client directory changes:
+
 ```
 {
  "ignore": [
@@ -401,6 +406,8 @@ After looking at the code again while writing the README, I think a possible upd
 
 ### Home Page
 As Alberto was working on styling other parts of the website, I took on populating and styling the home page. I created the hero and footer, and selected a small number of images to choose from for background, to give the website a sleek, vibrant and fresh look. The images had to include sharp design elements to accentuate the GlassMorphism, and we were keen to have a dynamic background that suggested a network of collaboration.
+
+![styling](#link)
 
 Working with the same friend I collaborated for Project 1, we processed the hero image to include the DEVERR logo, and edited the selected high resolution image to sharpen it.
 
