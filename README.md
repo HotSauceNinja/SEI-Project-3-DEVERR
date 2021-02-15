@@ -109,15 +109,19 @@ In order to assess overall daily progress, we discussed adopting a branch naming
 ### Wireframes
 
 Home page hero
+
 ![hero](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/hero.jpg?raw=true)
 
 Register user
+
 ![register_page](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/register_page.jpg?raw=true)
 
 Login user
+
 ![login](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/login.jpg?raw=true)
 
 User profile
+
 ![profile-page](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/profile-page.jpg?raw=true)
 
 ### Project Set Up
