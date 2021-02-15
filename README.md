@@ -395,7 +395,7 @@ Once Alberto and Tim started working on the front end, it became more and more o
 
 To resolve this issue, we decided to restructure our schemas and refactor Bidders and Auctioneers into one User schema with the added boolean field isAuctioneer:
 
-![schema2](#link)
+![schema2](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/Schema2.png?raw=true)
 
 ### Front End
 After I finished implementing everything we discussed for the back end, I moved on to help Tim and Alberto on the front end. 
@@ -407,7 +407,7 @@ After looking at the code again while writing the README, I think a possible upd
 ### Home Page
 As Alberto was working on styling other parts of the website, I took on populating and styling the home page. I created the hero and footer, and selected a small number of images to choose from for background, to give the website a sleek, vibrant and fresh look. The images had to include sharp design elements to accentuate the GlassMorphism, and we were keen to have a dynamic background that suggested a network of collaboration.
 
-![styling](#link)
+![styling](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/style.png?raw=true)
 
 Working with the same friend I collaborated for Project 1, we processed the hero image to include the DEVERR logo, and edited the selected high resolution image to sharpen it.
 
