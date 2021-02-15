@@ -2,7 +2,7 @@
 by [Alberto Cerrone](www.linkedin.com/in/alberto-cerrone), [Sandra Spighel](https://www.linkedin.com/in/sandraspighel/) & [Tim Frame](https://www.linkedin.com/in/tim-frame-187241100/) AKA SpicyKiwiPizza
 ![img](https://img.shields.io/badge/version-v%201.0.0-blue)
 
-![DEVERR demo clip](#link)
+![welcome_page](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/Home_page.gif?raw=true)
 
 👉 [<b>TRY ME</b>](#website link) 👈
 
@@ -58,9 +58,21 @@ This is the third project in the General Assembly Software Engineering Immersive
 * Start the server and front end (concurrently) <code>yarn dev-fullstack</code>
 
 ## How To Use DEVERR
-Auctioneers can view and publish jobs, comment on them and choose the winning bid from all bids received.  They can also favourite other users.
 
-Bidders can browse all the jobs and filter them by category, place comments, bid for jobs and favourite other users.
+![Register & Login](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/Register_user.gif?raw=true)
+
+Auctioneers can view and publish jobs, comment on them and choose the winning bid from all bids received. 
+
+![Post Job](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/post_job.gif?raw=true)
+
+Bidders can browse all the jobs and filter them by category, place comments and bid for jobs.
+
+![Place Bid](https://github.com/HotSauceNinja/SEI-Project-3-DEVERR/blob/main/README%20images/Place_bid.gif?raw=true)
+
+Users can also favourite other users.
+
+![Favourite User](#link)
+
 ### Prerequisites
 The website is mobile friendly and the user can access it through the browser. 
 ### How to navigate the website
