@@ -3,9 +3,9 @@ import { categories } from '../../util/categories.js'
 
 function biddersSeed() {
 
-  const bidderArray = [] // ! an array to push my 100 fake users into
+  const bidderArray = [] // ! an array to push my fake users into
 
-  for (let index = 0; index < 60; index++) { // ! looping to created 100 users
+  for (let index = 0; index < 60; index++) { // ! looping to created users
     const firstName = faker.name.firstName()
     const lastName = faker.name.lastName()
     const name = `${firstName} ${lastName}`
